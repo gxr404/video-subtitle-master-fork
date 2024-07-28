@@ -1,0 +1,35 @@
+appId: com.example.video-subtitle-master
+productName: Video Subtitle Master
+copyright: Copyright © 2024 buxuku
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: ['github']
+mac:
+  target:
+    - target: dmg
+      arch:
+        - arm64
+        - x64
+  artifactName: "${productName}_Mac_${version}_${arch}.${ext}"
+win:
+  target: nsis
+  requestedExecutionLevel: asInvoker
+  artifactName: "${productName}_Windows_${version}_${arch}.${ext}"
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: false
+extraResources:
+  - from: ./extraResources/
+    to: ./extraResources/
+asarUnpack:
+  - "node_modules/ffmpeg-static/bin/${os}/${arch}/ffmpeg"
+  - "node_modules/ffmpeg-static/index.js"
+  - "node_modules/ffmpeg-static/package.json"
