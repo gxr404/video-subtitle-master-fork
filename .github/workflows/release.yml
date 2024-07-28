@@ -39,6 +39,7 @@ jobs:
         uses: samuelmeuli/action-electron-builder@v1.6.0
         if: matrix.os == 'macos-13'
         with:
+          args: "--x64"
           # GitHub token, automatically provided to the action
           # (No need to define this secret in the repo settings)
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -51,6 +52,7 @@ jobs:
         uses: samuelmeuli/action-electron-builder@v1.6.0
         if: matrix.os == 'macos-latest'
         with:
+          args: "--arm64"
           # GitHub token, automatically provided to the action
           # (No need to define this secret in the repo settings)
           github_token: ${{ secrets.GITHUB_TOKEN }}
