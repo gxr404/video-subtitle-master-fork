@@ -11,7 +11,8 @@ jobs:
 
     strategy:
       matrix:
-        os: [macos-latest, windows-latest]
+        # macos-13 is an intel runner, macos-14(macos-latest) is apple silicon
+        os: [macos-latest, windows-latest, macos-13]
 
     steps:
       - name: Check out Git repository
