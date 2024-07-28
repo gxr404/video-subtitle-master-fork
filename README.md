@@ -43,7 +43,9 @@ git clone https://github.com/buxuku/video-subtitle-master.git
 
 ```shell
 cd video-subtitle-master
-yarn install 
+yarn install
 ```
 
-3️⃣ 依赖包安装好之后，执行 `yarn start` 或者 `npm start` 
+3️⃣ 依赖包安装好之后，执行 `yarn start` 或者 `npm start`
+
+一些更新
